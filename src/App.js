@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Home from "./pages/Home";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Cart from "./pages/Cart";
+import { useState } from "react";
+import { useHistory } from "react-router";
+// import { allProducts } from "../server/controllers/productController";
 
 function App() {
+  const [cartItems, setCartItems] = useState([]);
+  const history = useHistory();
+  const addToCart = (allProduct) => {
+    console.log(allProduct);
+    if (cartItems.includes(allProduct)) {
+      alert("already there");
+    } else {
+      setCartItems([...cartItems, allProduct]);
+    }
+    history.push("/cart");
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Router> */}
+      <Switch>
+        <Route exact path="/">
+          <Home addToCart={addToCart} />
+        </Route>
+        <Route exact path="/cart">
+          <Cart cartItems={cartItems} />
+        </Route>
+      </Switch>
+      {/* </Router> */}
     </div>
   );
 }

@@ -1,0 +1,49 @@
+.container {
+  width: 50%;
+  height: auto;
+  margin-bottom: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+}
+.title {
+  font-size: 24px;
+  font-weight: 600;
+}
+.container:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.product_image {
+  /* width: 100px; */
+  max-width: 90%;
+  height: 200px;
+  margin: auto;
+}
+/* .product_image:hover {
+  width: 150px;
+  height: 250px;
+} */
+.price {
+  width: max-content;
+}
+.add_button {
+  background-color: blue;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  height: 35px;
+  width: 200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.description {
+  width: max-content;
+  font-weight: 600;
+  font-size: 18px;
+  font-family: Poppins;
+}
